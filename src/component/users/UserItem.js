@@ -3,6 +3,7 @@ import {Button,Card} from 'react-bootstrap';
 import PropTypes from 'prop-types'
 import {Link} from 'react-router-dom'
 const UserItem =({user:{login,avatar_url,html_url}})=>{
+    console.log("fghjk")
 return(
             <Card style={{ width: '18rem',textAlign:'center' }}  >
               <Card.Img variant="top" src={avatar_url} className='rounded-top' />

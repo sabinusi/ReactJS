@@ -1,16 +1,21 @@
-import React, { PureComponent, Component } from 'react'
+import React, { PureComponent, Component,useContext } from 'react'
 import UserItem from './UserItem';
 import Spinner from '../layout/Spinner'
 import PropTypes from 'prop-types'
+import { GithubContext} from '../../Context'
 
 
 import  {Row,Col} from 'react-bootstrap'
-const Users1 =({users,loading}) => {
+const Users1 =()=> {
+    const githubContext=useContext(GithubContext);
+    const {users,loading}=githubContext;
+    console.log(users,loading)
     if (loading) {
         return(
             <Spinner/>
         )
     } else {
+        console.log(users)
         return (
             <Row >
                 {users.map(user=>{
